@@ -2,11 +2,10 @@ import os
 import requests
 
 base_urls = [
-    "https://faponic.com/data/c/u/curvygirl/1000/curvygirl_",
-    "https://faponic.com/data/k/o/kobaebeefboo/1000/kobaebeefboo_",
-    "https://faponic.com/data/s/e/sejinming/1000/sejinming_",
-    "https://faponic.com/data/r/e/reilin/1000/reilin_",
-    "https://faponic.com/data/n/o/norafawn/2000/norafawn_"
+    "https://fapocta/c/u/vygirl_",
+    "https://fam/data/k/o/kobboo/100efboo_",
+    "https://fanom/daejiming_",
+    "https://fap/norafawn/2000/norafawn_"
 ]
 photo_number = 1
 
