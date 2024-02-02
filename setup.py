@@ -1,48 +1,10 @@
-import os
-import requests
+from setuptools import setup
 
-base_urls = [
-    "https://fapocta/c/u/vygirl_",
-    "https://fam/data/k/o/kobboo/100efboo_",
-    "https://fanom/daejiming_",
-    "https://fap/norafawn/2000/norafawn_"
-]
-photo_number = 1
-
-# create a directory for the downloaded images
-if not os.path.exists("photos"):
-    os.mkdir("photos")
-    print("Created directory: photos")
-
-# loop through each base URL until the maximum photo number is reached
-for base_url in base_urls:
-    # extract the directory name from the base URL
-    dirname = os.path.basename(base_url.rstrip('/'))
-    # create a directory with the dirname
-    dirname_path = os.path.join("photos", dirname)
-    if not os.path.exists(dirname_path):
-        os.mkdir(dirname_path)
-        print(f"Created directory: {dirname_path}")
-    
-    while True:
-        # create the URL for the current photo
-        photo_url = base_url + f"{photo_number:04}.jpg"
-        
-        # create the filename for the current photo
-        filename = os.path.join(dirname_path, f"name_{photo_number:04}.jpg")
-        
-        # simulate a web browser by setting the User-Agent header
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"}
-        
-        # download the photo and save it to disk using Requests library
-        response = requests.get(photo_url, headers=headers)
-        if response.status_code == 404:
-            print(f"Reached the end of the photos for {base_url}. Downloaded {photo_number-1} photos.")
-            photo_number = 1
-            break
-        with open(filename, "wb") as f:
-            f.write(response.content)
-        print(f"Downloaded {filename}")
-        
-        # increment the photo number
-        photo_number += 1
+setup(
+    name='your_package',
+    version='0.1.0',
+    packages=['your_package'],
+    install_requires=[
+        # List your dependencies here
+    ],
+)
